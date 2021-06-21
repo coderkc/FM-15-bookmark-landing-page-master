@@ -352,6 +352,7 @@
       $(".toggle").bind("click", function () {
         $(".menu").addClass("active");
         $(".toggle").addClass("active");
+        $("body").css("overflow", "hidden")
       });
       $(".close").bind("click", function () {
         $(".menu").removeClass("active");
