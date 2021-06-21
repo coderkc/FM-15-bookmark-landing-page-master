@@ -105,7 +105,7 @@ header .toggle {
   margin-right: 21px;
   width: 40px;
   height: 40px;
-  transition: all 1s;
+  transition: all 0.51s;
 }
 header .toggle.active span:first-child {
   transform: rotate(45deg) translate3d(5px, 12px, 0);
@@ -724,20 +724,17 @@ header .toggle span {
     display: none;
   }
   header .menu.active {
-    position: absolute;
+    position: fixed;
     background: rgba(0, 0, 33, 0.9);
-    z-index: 5;
+    z-index: 5555;
     right: 0;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    min-height: 100vh;
-    height: 100vh;
-    height: auto;
     display: flex;
     flex-direction: column;
     padding: 40px 10px;
+    width: 100%;
   }
   header .menu.active .logo-mob {
     display: flex;
@@ -791,6 +788,7 @@ header .toggle span {
     width: 80%;
     height: 42px;
     margin-left: 0;
+    padding: 10px;
     margin-top: 55px;
     color: #fff;
     background: transparent;
