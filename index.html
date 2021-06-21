@@ -352,9 +352,12 @@
 
       $(".toggle").bind("click", function () {
         $(".menu").addClass("active");
+        $(".toggle").addClass("active");
       });
       $(".close").bind("click", function () {
         $(".menu").removeClass("active");
+        $(".toggle").removeClass("active");
+
       });
     </script>
   </body>
