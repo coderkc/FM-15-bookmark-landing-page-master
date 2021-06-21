@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>İhsan Coder | Bookmark landing page | Frontend Mentor</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo"></div>
+        <nav class="menu">
+          <div class="logo-mob">
+            <div class="logo"></div>
+            <div class="close">x</div>
+          </div>
+
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <button class="login">Login</button>
+          <div class="social-mob">
+            <span class="facebook"></span>
+            <a href="https://twitter.com/coderkc27" target="_blank"><span class="twitter"></span></a>
+          </div>
+        </nav>
+        <div class="toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>A Simple Bookmark Manager</h1>
+          <p>
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </p>
+          <div class="btns">
+            <button class="ch">Get it on Chrome</button>
+            <button class="ff">Get it on Firefox</button>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="./images/illustration-hero.svg" alt="hero" width="695" />
+        </div>
+      </section>
+
+      <section class="features">
+        <h2>Features</h2>
+        <p class="text">
+          Our aim is to make it quick and easy for you to access your favourite
+          websites. Your bookmarks sync between your devices so you can access
+          them on the go.
+        </p>
+
+        <div class="tabs">
+          <ul>
+            <li data-tab="bookmark" class="active">Simple Bookmarking</li>
+            <li data-tab="search">Speedy Searching</li>
+            <li data-tab="share">Easy Sharing</li>
+          </ul>
+          <div class="tab active" id="bookmark">
+            <div class="img">
+              <img
+                src="./images/illustration-features-tab-1.svg"
+                alt="tab-1"
+                width="566"
+                height="375"
+              />
+            </div>
+            <div class="inner">
+              <h3>Bookmark in one click</h3>
+              <p>
+                Organize your bookmarks however you like. Our simple
+                drag-and-drop interface gives you complete control over how you
+                manage your favourite sites.
+              </p>
+
+              <button class="more-info">More Info</button>
+            </div>
+          </div>
+
+          <div class="tab" id="search">
+            <div class="img">
+              <img
+                src="./images/illustration-features-tab-2.svg"
+                alt="tab-2"
+                width="478"
+                height="416"
+              />
+            </div>
+
+            <div class="inner">
+              <h3>Intelligent search</h3>
+              <p>
+                Our powerful search feature will help you find saved sites in no
+                time at all. No need to trawl through all of your bookmarks.
+              </p>
+
+              <button class="more-info">More Info</button>
+            </div>
+          </div>
+
+          <div class="tab" id="share">
+            <div class="img">
+              <img
+                src="./images/illustration-features-tab-3.svg"
+                alt="tab-3"
+                width="440"
+                height="380"
+              />
+            </div>
+
+            <div class="inner">
+              <h3>Share your bookmarks</h3>
+              <p>
+                Easily share your bookmarks and collections with others. Create
+                a shareable link that you can send at the click of a button.
+              </p>
+
+              <button class="more-info">More Info</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="download">
+        <h2>Download the extension</h2>
+        <p class="text">
+          We’ve got more browsers in the pipeline. Please do let us know if
+          you’ve got a favourite you’d like us to prioritize.
+        </p>
+        <div class="cards">
+          <div class="card chrome">
+            <div class="icon">
+              <img src="./images/logo-chrome.svg" alt="chrome" />
+            </div>
+            <h3>Add to Chrome</h3>
+            <p>Minimum version 62</p>
+            <button>Add & Install Extension</button>
+          </div>
+
+          <div class="card firefox">
+            <div class="icon">
+              <img src="./images/logo-firefox.svg" alt="firefox" />
+            </div>
+            <h3>Add to Firefox</h3>
+            <p>Minimum version 55</p>
+            <button>Add & Install Extension</button>
+          </div>
+
+          <div class="card opera">
+            <div class="icon">
+              <img src="./images/logo-opera.svg" alt="opera" />
+            </div>
+            <h3>Add to Opera</h3>
+            <p>Minimum version 46</p>
+            <button>Add & Install Extension</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <p class="text">
+          Here are some of our FAQs. If you have any other questions you’d like
+          answered please feel free to email us.
+        </p>
+
+        <div class="questions">
+          <div class="question">
+            <!-- Question 1 -->
+            What is Bookmark?
+            <div class="arr"></div>
+          </div>
+          <div class="answer">
+            <!-- Answer 1 -->
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+            tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
+            quis quam ornare mattis.
+          </div>
+        </div>
+        <div class="questions">
+          <div class="question">
+            <!-- Question 2 -->
+            How can I request a new browser?
+            <div class="arr"></div>
+          </div>
+          <div class="answer">
+            <!-- Answer 2 -->
+            Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+            ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros
+            aliquet convallis ultricies. Mauris augue massa, ultricies non
+            ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis
+            ultricies. Mauris augue massa, ultricies non ligula. Suspendisse
+            imperdiet.
+          </div>
+        </div>
+        <div class="questions">
+          <div class="question">
+            <!-- Question 3 -->
+            Is there a mobile app?
+            <div class="arr"></div>
+          </div>
+          <div class="answer">
+            <!-- Answer 3 -->
+            Sed consectetur quam id neque fermentum accumsan. Praesent luctus
+            vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula
+            quis est pharetra mattis sit amet pharetra purus. Sed sollicitudin
+            ex et ultricies bibendum.
+          </div>
+        </div>
+        <div class="questions">
+          <div class="question">
+            <!-- Question 4 -->
+            What about other Chromium browsers?
+            <div class="arr"></div>
+          </div>
+          <div class="answer">
+            <!-- Answer 4 -->
+            Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat
+            mi, at euismod dui. Aliquam vitae neque eget nisl gravida
+            pellentesque non ut velit.
+          </div>
+        </div>
+
+        <button class="moreinfo">More Info</button>
+      </section>
+
+      <footer class="footer">
+        <div class="top">
+          <h4>35,000+ already joined</h4>
+          <h3>
+            Stay up-to-date with what <br />
+            we’re doing
+          </h3>
+          <form>
+            <div>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+              />
+              <span class="alert"></span>
+            </div>
+            <div class="email"></div>
+            <button class="btn">Contact Us</button>
+          </form>
+        </div>
+        <div class="footer-nav">
+          <div class="inner">
+            <div class="logo">
+              <img src="./images/logo-w.svg" alt="logo" />
+            </div>
+            <nav>
+              <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="social">
+            <span class="facebook"></span>
+            <a href="https://twitter.com/coderkc27" target="_blank"
+              ><span class="twitter"></span>
+            </a>
+          </div>
+        </div>
+
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by
+          <a href="https://twitter.com/coderkc27" target="_blank">İhsan Coder</a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      $(".tabs ul li").bind("click", function () {
+        $(".tabs ul li").removeClass("active");
+        this.classList.add("active");
+        let tab = this.dataset.tab;
+        let tabo = [...$(".tabs .tab")];
+        tabo.forEach((el) => {
+          el.classList.remove("active");
+          if (tab == el.id) {
+            el.classList.add("active");
+          }
+        });
+      });
+
+      $(".question").bind("click", function () {
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("active");
+        [...$(this).find(".arr")][0].classList.toggle("active");
+      });
+
+      $(".btn").bind("click", validate);
+
+      function validateEmail(email) {
+        const re =
+          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      }
+
+      function validate() {
+        event.preventDefault();
+        const $result = $(".email");
+
+        console.log($result);
+        const email = $("#email").val();
+        $result.text("");
+
+        if (validateEmail(email)) {
+          $result.text("");
+          $(".alert").css("opacity", "0");
+          $("#email").css("border", "1px solid hsl(246, 25%, 77%)");
+          $result.css("opacity", "0");
+        } else {
+          $(".alert").css("opacity", "1");
+          $result.text(email + " is not valid :(");
+          $result.css("opacity", "1");
+
+          $result.css("color", "snow");
+          $("#email").css("border", "3px solid hsl(0, 94%, 66%)");
+        }
+      }
+
+      $(".toggle").bind("click", function () {
+        $(".menu").addClass("active");
+      });
+      $(".close").bind("click", function () {
+        $(".menu").removeClass("active");
+      });
+    </script>
+  </body>
+</html>
