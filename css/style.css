@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
   border: none;
   text-decoration: none;
   list-style: none;
@@ -13,6 +12,17 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 body {
@@ -33,7 +43,6 @@ header {
   padding: 50px 0;
 }
 header .logo {
-  background: url("../images/logo-bookmark.svg");
   width: 148px;
   height: 25px;
   margin-left: 30px;
@@ -55,7 +64,7 @@ header nav .logo-mob .logo {
   height: 25px;
   margin-left: 10px;
 }
-header nav .logo-mob .close {
+header nav .logo-mob .toggle-btn {
   color: #fff;
   width: 25px;
   height: 25px;
@@ -100,31 +109,34 @@ header nav .login:hover {
   background: transparent;
   cursor: pointer;
 }
-header .toggle {
+header .toggle-btn {
   display: none;
-  margin-right: 21px;
-  width: 40px;
-  height: 40px;
-  transition: all 0.51s;
+  background: red;
+  width: 45px;
+  height: 45px;
+  padding: 2px;
+  margin-right: 15px;
+  background: transparent;
+  cursor: pointer;
 }
-header .toggle.active span:first-child {
-  transform: rotate(45deg) translate3d(5px, 12px, 0);
-}
-header .toggle.active span:nth-child(2) {
-  transform: scale(0);
-}
-header .toggle.active span:last-child {
-  transform: rotate(-45deg) translate3d(2px, -8px, 0);
-}
-header .toggle span {
-  box-shadow: 0 0 2px black, inset 0 0 1px rgba(255, 255, 255, 0.25);
+header .toggle-btn .navicon span {
+  box-shadow: 0 0 2px black, inset 0 0 1px rgba(255, 0, 0, 0.925);
   width: 37px;
   height: 4px;
   background: #252b46;
   display: block;
   border-radius: 2px;
-  margin: 6px;
-  transition: all 1s;
+  margin: 6px auto;
+  transition: all 0.5s;
+}
+header .toggle-btn .navicon.active span:first-child {
+  transform: rotate(45deg) translate3d(6px, 5px, 0);
+}
+header .toggle-btn .navicon.active span:nth-child(2) {
+  transform: scale(0);
+}
+header .toggle-btn .navicon.active span:last-child {
+  transform: rotate(-45deg) translate3d(8px, -7px, 0);
 }
 
 .hero {
@@ -237,7 +249,7 @@ header .toggle span {
 .features .tabs {
   margin-top: 55px;
 }
-.features .tabs ul {
+.features .tabs .btns {
   display: flex;
   justify-content: center;
   padding-top: 1.4%;
@@ -246,20 +258,23 @@ header .toggle span {
   margin: 0 auto;
   border-bottom: 2px solid #9194a1;
 }
-.features .tabs ul li {
+.features .tabs .btns button {
   color: #9194a1;
   text-align: center;
   width: 240px;
+  font-size: 16px;
   font-weight: 500;
   position: relative;
+  background: transparent;
 }
-.features .tabs ul li:not(:last-child) {
+.features .tabs .btns button:not(:last-child) {
   margin-right: 90px;
 }
-.features .tabs ul li.active {
+.features .tabs .btns button.active {
   color: #252b46;
+  font-weight: bold;
 }
-.features .tabs ul li.active::after {
+.features .tabs .btns button.active::after {
   position: absolute;
   content: "";
   width: 225px;
@@ -268,8 +283,9 @@ header .toggle span {
   left: -30px;
   bottom: -2px;
 }
-.features .tabs ul li:hover {
+.features .tabs .btns button:hover {
   color: #fa5757;
+  font-weight: bold;
   cursor: pointer;
 }
 .features .tabs .tab {
@@ -399,7 +415,7 @@ header .toggle span {
 .download .cards .card p::after {
   position: absolute;
   content: "";
-  background: url("../../images/bg-dots.svg");
+  background: url("../images/bg-dots.svg");
   width: 100%;
   height: 4px;
   bottom: 100px;
@@ -452,11 +468,25 @@ header .toggle span {
 }
 .faq .questions {
   position: relative;
-  margin-left: 10px;
-  padding-left: 10px;
   border-top: 2px solid rgba(192, 192, 192, 0.524);
 }
-.faq .questions .arr {
+.faq .questions .question {
+  font-size: 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+  padding-left: 10px;
+}
+.faq .questions .question:hover {
+  color: #fa5757;
+}
+.faq .questions .question.active {
+  font-weight: 500;
+}
+.faq .questions .question .arr {
   position: absolute;
   background: url("../images/icon-arrow.svg") no-repeat;
   width: 20px;
@@ -465,22 +495,9 @@ header .toggle span {
   right: 20px;
   transition: all 0.51s;
 }
-.faq .questions .arr.active {
+.faq .questions .question .arr.active {
   transform: rotateX(180deg);
   filter: hue-rotate(111deg);
-}
-.faq .questions .question {
-  font-size: 20px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.faq .questions .question:hover {
-  color: #fa5757;
-}
-.faq .questions .question.active {
-  font-weight: 500;
 }
 .faq .questions .answer {
   color: #9194a1;
@@ -577,6 +594,7 @@ header .toggle span {
   background: #fa5757;
   width: 320px;
   height: 35px;
+  color: snow;
   text-align: left;
   font-style: italic;
   padding: 5px;
@@ -645,23 +663,25 @@ header .toggle span {
   margin-right: 8%;
   display: flex;
   justify-content: space-between;
-  width: 95px;
+  width: 65px;
   height: 25px;
   margin-top: 15px;
 }
-.footer-nav .social span {
+.footer-nav .social a:not(:last-child) {
+  margin-right: 15px;
+}
+.footer-nav .social a span {
   display: block;
   width: 24px;
   height: 24px;
 }
-.footer-nav .social span:hover {
+.footer-nav .social a span:hover {
   cursor: pointer;
 }
 .footer-nav .social .facebook {
   background: url("../images/icon-facebook.svg") no-repeat;
 }
 .footer-nav .social .twitter {
-  margin-left: 11px;
   background: url("../images/icon-twitter.svg") no-repeat;
 }
 .footer .attribution a {
@@ -802,7 +822,7 @@ header .toggle span {
     background: transparent;
     cursor: pointer;
   }
-  header .toggle {
+  header .toggle-btn {
     display: block;
   }
 
@@ -810,7 +830,7 @@ header .toggle span {
     flex-direction: column-reverse;
   }
   .hero-text, .hero-img {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
   }
   .hero-text {
@@ -849,25 +869,25 @@ header .toggle span {
     width: 100%;
     padding: 0 55px;
   }
-  .features .tabs ul {
+  .features .tabs .btns {
     flex-direction: column;
     width: 80%;
     height: 175px;
     border-bottom: none;
   }
-  .features .tabs ul li {
+  .features .tabs .btns button {
     margin: 0 auto;
     width: 100%;
     padding: 25px 0;
     border-block-start: 2px solid rgba(192, 192, 192, 0.592);
   }
-  .features .tabs ul li:last-child {
+  .features .tabs .btns button:last-child {
     border-block-end: 2px solid rgba(192, 192, 192, 0.592);
   }
-  .features .tabs ul li:not(:last-child) {
+  .features .tabs .btns button:not(:last-child) {
     margin-right: 0;
   }
-  .features .tabs ul li.active::after {
+  .features .tabs .btns button.active::after {
     z-index: 2;
     width: 225px;
     left: 50%;
@@ -973,7 +993,7 @@ header .toggle span {
     margin-right: 0 !important;
   }
   .footer-nav .social {
-    margin-left: 0;
+    margin-right: 0;
   }
 }
 

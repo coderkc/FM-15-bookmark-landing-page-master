@@ -21,14 +21,26 @@
   <body>
     <div class="container">
       <header>
-        <div class="logo"></div>
+        <div class="logo">
+          <a href="#" aria-label="Home page">
+            <img src="./images/logo-bookmark.svg" alt="logo">
+          </a>
+        </div>
+        <button class="toggle-btn"  aria-controls="menu">
+          <span class="sr-only">Menu</span>
+          <span class="navicon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
         <nav class="menu">
           <div class="logo-mob">
             <div class="logo"></div>
-            <div class="close">x</div>
+            <div class="toggle-btn">x</div>
           </div>
 
-          <ul>
+          <ul class="menu-down">
             <li><a href="#">Features</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Contact</a></li>
@@ -39,11 +51,7 @@
             <a href="https://twitter.com/coderkc27" target="_blank"><span class="twitter"></span></a>
           </div>
         </nav>
-        <div class="toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        
       </header>
 
       <section class="hero">
@@ -73,11 +81,12 @@
         </p>
 
         <div class="tabs">
-          <ul>
-            <li data-tab="bookmark" class="active">Simple Bookmarking</li>
-            <li data-tab="search">Speedy Searching</li>
-            <li data-tab="share">Easy Sharing</li>
-          </ul>
+          <div class="btns">
+            <button data-tab="bookmark" class="active">Simple Bookmarking</button>
+            <button data-tab="search">Speedy Searching</button>
+            <button data-tab="share">Easy Sharing</button>
+          </div>
+          
           <div class="tab active" id="bookmark">
             <div class="img">
               <img
@@ -187,11 +196,11 @@
         </p>
 
         <div class="questions">
-          <div class="question">
+          <button class="question">
             <!-- Question 1 -->
             What is Bookmark?
-            <div class="arr"></div>
-          </div>
+            <span class="arr"></span>
+          </button>
           <div class="answer">
             <!-- Answer 1 -->
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
@@ -200,11 +209,11 @@
           </div>
         </div>
         <div class="questions">
-          <div class="question">
+          <button class="question">
             <!-- Question 2 -->
             How can I request a new browser?
-            <div class="arr"></div>
-          </div>
+            <span class="arr"></span>
+          </button>
           <div class="answer">
             <!-- Answer 2 -->
             Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
@@ -216,11 +225,11 @@
           </div>
         </div>
         <div class="questions">
-          <div class="question">
+          <button class="question">
             <!-- Question 3 -->
             Is there a mobile app?
-            <div class="arr"></div>
-          </div>
+            <span class="arr"></span>
+          </button>
           <div class="answer">
             <!-- Answer 3 -->
             Sed consectetur quam id neque fermentum accumsan. Praesent luctus
@@ -230,11 +239,11 @@
           </div>
         </div>
         <div class="questions">
-          <div class="question">
+          <button class="question">
             <!-- Question 4 -->
             What about other Chromium browsers?
-            <div class="arr"></div>
-          </div>
+            <span class="arr"></span>
+          </button>
           <div class="answer">
             <!-- Answer 4 -->
             Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat
@@ -263,7 +272,7 @@
               <span class="alert"></span>
             </div>
             <div class="email"></div>
-            <button class="btn">Contact Us</button>
+            <button class="email-btn">Contact Us</button>
           </form>
         </div>
         <div class="footer-nav">
@@ -281,9 +290,13 @@
           </div>
 
           <div class="social">
-            <span class="facebook"></span>
-            <a href="https://twitter.com/coderkc27" target="_blank"
-              ><span class="twitter"></span>
+            <a href="#">
+              <span class="sr-only" aria-label="Go to facebook" >Facebook</span>
+              <span class="facebook"></span>
+            </a>
+            <a href="https://twitter.com/coderkc27"  aria-label="Go to twitter" target="_blank">
+              <span class="sr-only">Twitter</span>
+              <span class="twitter"></span>
             </a>
           </div>
         </div>
@@ -298,66 +311,8 @@
         </p>
       </footer>
     </div>
-
-    <script>
-      $(".tabs ul li").bind("click", function () {
-        $(".tabs ul li").removeClass("active");
-        this.classList.add("active");
-        let tab = this.dataset.tab;
-        let tabo = [...$(".tabs .tab")];
-        tabo.forEach((el) => {
-          el.classList.remove("active");
-          if (tab == el.id) {
-            el.classList.add("active");
-          }
-        });
-      });
-
-      $(".question").bind("click", function () {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("active");
-        [...$(this).find(".arr")][0].classList.toggle("active");
-      });
-
-      $(".btn").bind("click", validate);
-
-      function validateEmail(email) {
-        const re =
-          /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-      }
-
-      function validate() {
-        event.preventDefault();
-        const $result = $(".email");
-
-        const email = $("#email").val();
-        $result.text("");
-
-        if (validateEmail(email)) {
-          $result.text("");
-          $(".alert").css("opacity", "0");
-          $("#email").css("border", "1px solid hsl(246, 25%, 77%)");
-          $result.css("opacity", "0");
-        } else {
-          $(".alert").css("opacity", "1");
-          $result.text(email + " is not valid :(");
-          $result.css("opacity", "1");
-
-          $result.css("color", "snow");
-          $("#email").css("border", "3px solid hsl(0, 94%, 66%)");
-        }
-      }
-
-      $(".toggle").bind("click", function () {
-        $(".menu").addClass("active");
-        $(".toggle").addClass("active");
-      });
-      $(".close").bind("click", function () {
-        $(".menu").removeClass("active");
-        $(".toggle").removeClass("active");
-
-      });
-    </script>
+    
+    <script src="./main.js"></script>
   </body>
+
 </html>

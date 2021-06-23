@@ -1,0 +1,9 @@
+@mixin btn-hover($clr, $bgclr:transparent) {
+    &:hover {
+        color: $clr;
+        border: 2px solid $clr;
+        background: $bgclr;
+        cursor: pointer;
+    }
+}
+

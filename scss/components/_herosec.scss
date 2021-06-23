@@ -1,0 +1,76 @@
+.hero {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 10%;
+
+    
+    &-text {
+        width: 45%;
+        padding-top: 145px;
+        padding-left: 25px;
+
+        h1 {
+            font-size: 44px;
+            line-height: 53px;
+            letter-spacing: 3px;
+        }
+
+        p {
+            width: 92%;
+            margin-top: 26px;
+            color: $gblue;
+            line-height: 30px;
+        }
+
+        .btns {
+            margin-top: 33px;
+
+            button {
+                width: 170px;
+                height: 50px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 7px;
+                box-shadow: 0 5px 8px -5px rgba(0, 0, 0, 0.523);
+                transition: all .5s;
+
+            }
+
+            .ch {
+                color: #fff;
+                background: $sblue;
+                @include btn-hover($sblue);
+            }
+
+            .ff {
+                margin-left: 10px;
+                @include btn-hover($dblue);
+            }
+        }
+    }
+
+    &-img {
+        width: 55%;
+        height: 466px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            z-index: -1;
+            content: "";
+            background: $sblue;
+            max-width: 540px;
+            width: 80%;
+            max-height: 500px;
+            height: 70%;
+            bottom: -100px;
+            right: 0px;
+            border-bottom-left-radius: 170px;
+        }
+        img{
+            margin-top: 55px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,194 @@
+.footer {
+    text-align: center;
+    margin-top: 155px;
+    background: $sblue;
+
+    .top {
+        width: 555px;
+        margin: 0 auto;
+        padding-top: 70px;
+
+        h4 {
+            color: #fff;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        h3 {
+            color: #fff;
+            font-weight: 400;
+            margin-top: 36px;
+            font-size: 36px;
+            line-height: 40px;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            position: relative;
+
+            div {
+                position: relative;
+
+                input {
+                    width: 320px;
+                    height: 50px;
+                    border-radius: 11px;
+                    font: $font;
+                    padding: 11px;
+                    padding-right: 38px;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .alert {
+                    background: url('../images/icon-error.svg');
+                    display: block;
+                    z-index: 5;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 14px;
+                    right: 14px;
+                    opacity: 0;
+                }
+            }
+
+            .email {
+                position: absolute;
+                z-index: 0;
+                bottom: 15px;
+                left: 35px;
+                font-size: 14px;
+                background: $sred;
+                width: 320px;
+                height: 35px;
+                color: snow;
+                text-align: left;
+                font-style: italic;
+                padding: 5px;
+                padding-top: 10px;
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
+                opacity: 0;
+            }
+
+            button {
+                width: 130px;
+                height: 50px;
+                border-radius: 11px;
+                background: $sred;
+                color: #fff;
+                font-size: 15px;
+
+                &:hover {
+                    cursor: pointer;
+                    background: rgb(247, 78, 78);
+                }
+            }
+        }
+    }
+
+    &-nav {
+        background: $dblue;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 35px;
+        padding: 25px;
+        height: 100px;
+
+        .inner {
+            display: flex;
+            margin-left: 10%;
+
+            .logo {
+                margin-top: 15px;
+
+                img {
+
+                    width: 148px;
+                    height: 25px;
+                }
+            }
+
+            nav {
+                width: 350px;
+                display: flex;
+                align-items: center;
+                margin-left: 50px;
+
+                ul {
+                    display: flex;
+
+                    li {
+                        letter-spacing: 1px;
+
+                        &:not(:last-child) {
+                            margin-right: 45px;
+                        }
+
+                        a {
+                            font-size: 14px;
+                            font-weight: 500;
+                            color: #fff;
+                            text-transform: uppercase;
+                            transition: all .2s;
+
+                            &:hover {
+                                color: $sred;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .social {
+            margin-right: 8%;
+            display: flex;
+            justify-content: space-between;
+            width: 65px;
+            height: 25px;
+            margin-top: 15px;
+
+            a {
+                &:not(:last-child){
+                    margin-right: 15px;
+                }
+                span {
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .facebook {
+                background: url('../images/icon-facebook.svg') no-repeat;
+            }
+
+            .twitter {
+                background: url('../images/icon-twitter.svg') no-repeat;
+
+            }
+
+        }
+    }
+
+    .attribution {
+        a {
+            color: turquoise;
+
+            &:hover {
+                color: $sred;
+            }
+        }
+    }
+}

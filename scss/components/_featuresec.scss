@@ -1,0 +1,170 @@
+.features {
+    position: relative;
+    margin-top: 155px;
+    padding-top: 50px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        max-width: 620px;
+        width: 50%;
+        max-height: 370px;
+        height: 100%;
+        background: $sblue;
+        top: 555px;
+        border-bottom-right-radius: 170px;
+    }
+
+    h2,
+    .text {
+        text-align: center;
+        width: 550px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .text {
+        color: $gblue;
+        margin-top: 30px;
+        font-weight: 500;
+        line-height: 30px;
+    }
+
+    .tabs {
+        margin-top: 55px;
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            padding-top: 1.4%;
+            height: 75px;
+            width: 720px;
+            margin: 0 auto;
+            border-bottom: 2px solid $gblue;
+
+            button {
+                color: $gblue;
+                text-align: center;
+                width: 240px;
+                font-size: 16px;
+                font-weight: 500;
+                position: relative;
+                background: transparent;
+
+                &:not(:last-child) {
+                    margin-right: 90px;
+                }
+
+                &.active {
+                    color: $dblue;
+                    font-weight: bold;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        width: 225px;
+                        height: 5px;
+                        background: $sred;
+                        left: -30px;
+                        bottom: -2px;
+                    }
+
+                }
+
+                &:hover {
+                    color: $sred;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        .tab {
+            width: 100%;
+            position: absolute;
+            margin-top: 75px;
+            display: flex;
+            justify-content: space-evenly;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateX(-100px) scale(.5);
+            transition: all .4s ease-in-out;
+
+            .img {
+                max-width: 570px;
+                width: 100%;
+                margin-left: 75px;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        #bookmark {
+            img {
+                max-width: 566px;
+            }
+        }
+
+        #search {
+            img {
+                max-width: 478px;
+                margin-left: 15%;
+            }
+        }
+
+        #share {
+            img {
+                max-width: 440px;
+                margin-left: 20%;
+            }
+        }
+
+        .inner {
+            width: 555px;
+            height: 300px;
+            margin-top: 70px;
+            margin-left: 5px;
+            padding: 8px 16px;
+
+            h3 {
+                font-size: 30px;
+                letter-spacing: 2px;
+            }
+
+            p {
+                color: $gblue;
+                font-weight: 500;
+                line-height: 30px;
+                padding-top: 33px;
+                padding-right: 65px;
+            }
+
+            .more-info {
+                background: $sblue;
+                color: #fff;
+                font-size: 15px;
+                width: 115px;
+                height: 50px;
+                margin-top: 33px;
+                border-radius: 7px;
+                transition: all .5s;
+
+                @include btn-hover($sblue);
+            }
+        }
+
+    }
+}
