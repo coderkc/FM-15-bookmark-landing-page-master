@@ -34,9 +34,13 @@
             <span></span>
           </span>
         </button>
-        <nav class="menu">
+        <nav class="menu" id="menu">
           <div class="logo-mob">
-            <div class="logo"></div>
+            <div class="logo">
+          <a href="#" aria-label="Home page">
+            <img src="./images/logo-w.svg" alt="logo">
+          </a>
+            </div>
             <div class="toggle-btn">x</div>
           </div>
 
@@ -47,8 +51,14 @@
           </ul>
           <button class="login">Login</button>
           <div class="social-mob">
-            <span class="facebook"></span>
-            <a href="https://twitter.com/coderkc27" target="_blank"><span class="twitter"></span></a>
+            <a href="#">
+              <span class="sr-only" aria-label="Go to facebook" >Facebook</span>
+              <span class="facebook"></span>
+            </a>
+            <a href="https://twitter.com/coderkc27"  aria-label="Go to twitter" target="_blank">
+              <span class="sr-only">Twitter</span>
+              <span class="twitter"></span>
+            </a>
           </div>
         </nav>
         
@@ -267,6 +277,7 @@
               <input
                 type="email"
                 id="email"
+                aria-label="Enter your email"
                 placeholder="Enter your email address"
               />
               <span class="alert"></span>
